@@ -1,11 +1,23 @@
 package geniets.android.data;
 
-/**
- * Created by jjghali on 6/15/16.
- */
+import java.util.Date;
+import java.util.List;
+
+
 public class DayTask {
+    public Date Date;
+    public List<CourseTask> Courses;
 
-//    public DateTime Date { get; set; }
-//    public IEnumerable<CourseTask> Courses { get; set; }
+    public DayTask(java.util.Date date, List<CourseTask> courses) {
+        Date = date;
+        Courses = courses;
+    }
 
+    public java.util.Date getDate() {
+        return Date;
+    }
+
+    public List<CourseTask> getCourses() {
+        return Courses;
+    }
 }

@@ -5,7 +5,6 @@
     <item
       android:id="@+id/tlbarSchedule_calendar"
       android:title="test"
-      android:icon="@drawable/ic_event_white_24dp"
       app:showAsAction="ifRoom"/>
   <item android:id="@+id/action_settings"
         android:title="settings"
