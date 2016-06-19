@@ -8,9 +8,9 @@ import android.widget.BaseAdapter;
 
 import java.util.List;
 
-import geniets.AccountWrapper;
+
 import geniets.android.data.CourseTask;
-import geniets.soap.Etudiant;
+
 
 public class ScheduleTaskAdapter extends BaseAdapter{
     private List<CourseTask> courses;
