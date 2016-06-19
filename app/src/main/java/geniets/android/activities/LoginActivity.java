@@ -11,7 +11,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import geniets.android.R;
-import geniets.android.data.UserService;
+import geniets.android.services.UserService;
 
 public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.loginButton)

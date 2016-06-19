@@ -1,4 +1,4 @@
-package geniets.android.data;
+package geniets.android.services;
 
 import java.util.concurrent.ExecutionException;
 

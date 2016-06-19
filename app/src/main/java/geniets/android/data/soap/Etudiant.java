@@ -20,7 +20,7 @@ import java.util.Hashtable;
 
 public class Etudiant extends DonneesRetournees implements KvmSerializable
 {
-
+    public Long id;
     
     public String nom;
     
@@ -157,6 +157,7 @@ public class Etudiant extends DonneesRetournees implements KvmSerializable
 
     }
 
+
     @Override
     public java.lang.Object getProperty(int propertyIndex) {
         int count = super.getPropertyCount();
@@ -233,4 +234,11 @@ public class Etudiant extends DonneesRetournees implements KvmSerializable
     {
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
