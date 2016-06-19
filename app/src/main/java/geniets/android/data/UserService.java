@@ -7,36 +7,42 @@ import geniets.android.data.soap.IServiceEvents;
 import geniets.android.data.soap.OperationResult;
 import geniets.android.data.soap.SignetsMobileSoap;
 
-/**
- * Created by jjgha on 2016-06-18.
- */
 public class UserService {
-    SignetsMobileSoap signetsMobileSoap;
+    SignetsMobileSoap soap;
 
     public UserService() {
-        Etudiant result;
-        OperationResult<Etudiant> etudiant = null;
-        signetsMobileSoap = new SignetsMobileSoap(new IServiceEvents() {
+        soap = new SignetsMobileSoap(new IServiceEvents() {
             @Override
             public void Starting() {
-
             }
-
             @Override
             public void Completed(OperationResult result) {
-
             }
         });
+    }
+
+    public Etudiant getInfoEtudiant(String id, String password) {
+        Etudiant result = null;
         try {
-            etudiant = signetsMobileSoap.infoEtudiantAsync("***REMOVED***", "***REMOVED***").get();
+            result = soap.infoEtudiantAsync(id, password).get().Result;
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        return result;
+    }
 
-        result = etudiant.Result;
-        System.out.println();
+    public boolean isLoginValid(String id, String password) {
+        boolean result = false;
+        try {
+            result = soap.donneesAuthentificationValidesAsync(id, password).get().Result;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 }
 
