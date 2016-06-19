@@ -6,29 +6,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import java.util.List;
-
-
-import geniets.android.data.CourseTask;
-
-
 public class ScheduleTaskAdapter extends BaseAdapter{
-    private List<CourseTask> courses;
+    //    private List<CourseTask> courses;
     private Activity activity;
 
-    public ScheduleTaskAdapter(List<CourseTask> courses, Activity activity) {
-        this.courses = courses;
-        this.activity = activity;
-    }
+//    public ScheduleTaskAdapter(List<CourseTask> courses, Activity activity) {
+//        this.courses = courses;
+//        this.activity = activity;
+//    }
 
     @Override
     public int getCount() {
-        return courses.size();
+        return 0;
     }
 
     @Override
     public Object getItem(int position) {
-        return courses.get(position);
+        return null;
     }
 
     @Override
