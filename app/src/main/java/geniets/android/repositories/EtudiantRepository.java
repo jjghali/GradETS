@@ -1,4 +1,4 @@
-package geniets.android.services;
+package geniets.android.repositories;
 
 import java.util.concurrent.ExecutionException;
 
@@ -7,10 +7,10 @@ import geniets.android.data.soap.IServiceEvents;
 import geniets.android.data.soap.OperationResult;
 import geniets.android.data.soap.SignetsMobileSoap;
 
-public class UserService {
+public class EtudiantRepository {
     SignetsMobileSoap soap;
 
-    public UserService() {
+    public EtudiantRepository() {
         soap = new SignetsMobileSoap(new IServiceEvents() {
             @Override
             public void Starting() {
