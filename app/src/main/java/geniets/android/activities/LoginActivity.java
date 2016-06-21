@@ -1,5 +1,7 @@
 package geniets.android.activities;
 
+import android.accounts.AccountAuthenticatorActivity;
+import android.accounts.AccountManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,7 +17,12 @@ import geniets.android.data.soap.Etudiant;
 import geniets.android.repositories.EtudiantRepository;
 import geniets.android.services.EtudiantService;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AccountAuthenticatorActivity {
+    public static final String ARG_ACCOUNT_TYPE = "ARG_ACCOUNT_TYPE";
+    public static final String ARG_AUTH_TYPE = "ARG_AUTH_TYPE";
+    public static final String ARG_IS_ADDING_NEW_ACCOUNT = "ARG_IS_ADDING_NEW_ACCOUNT";
+    public static final String ARG_ACCOUNT_NAME = "ARG_ACCOUNT_NAME";
+
     @BindView(R.id.loginButton)
     Button loginButton;
     @BindView(R.id.loginUsername)
@@ -25,15 +32,18 @@ public class LoginActivity extends AppCompatActivity {
 
     private EtudiantRepository etudiantRepository;
     private EtudiantService etudiantService;
+    private AccountManager mAccountManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_login);
         etudiantRepository = new EtudiantRepository();
         etudiantService = new EtudiantService(this);
 
-        setContentView(R.layout.activity_login);
+        mAccountManager = AccountManager.get(getBaseContext());
+
+
         ButterKnife.bind(this);
     }
 
@@ -46,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         if (isLoginValid) {
             Etudiant etudiant = etudiantRepository.getInfoEtudiant(username, password);
             Etudiant result = etudiantService.insertOrReplaceEtudiant(etudiant);
-            Etudiant result2 = etudiantService.getEtudiant(result.getId());
+//            mAccountManager.
         }
 
         Toast.makeText(this, (isLoginValid ? "Logged in successfully" : "Invalid credentials"),
