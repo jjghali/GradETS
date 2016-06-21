@@ -11,7 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/CustomTheme">
 
-        <activity android:name=".activities.LoginActivity"></activity>
+        <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
+        <activity android:name=".activities.LoginActivity">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <!-- <activity android:name=".activities.LoginActivity"></activity> -->
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/SplashTheme">
@@ -21,15 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service android:name=".util.GenietsAutenticatorService">
-            <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator" />
-            </intent-filter>
-            <meta-data android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/authenticator" />
-        </service>
-
     </application>
 
 </manifest>

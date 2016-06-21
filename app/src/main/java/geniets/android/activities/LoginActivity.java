@@ -1,7 +1,5 @@
 package geniets.android.activities;
 
-import android.accounts.AccountAuthenticatorActivity;
-import android.accounts.AccountManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,12 +15,7 @@ import geniets.android.data.soap.Etudiant;
 import geniets.android.repositories.EtudiantRepository;
 import geniets.android.services.EtudiantService;
 
-public class LoginActivity extends AccountAuthenticatorActivity {
-    public static final String ARG_ACCOUNT_TYPE = "ARG_ACCOUNT_TYPE";
-    public static final String ARG_AUTH_TYPE = "ARG_AUTH_TYPE";
-    public static final String ARG_IS_ADDING_NEW_ACCOUNT = "ARG_IS_ADDING_NEW_ACCOUNT";
-    public static final String ARG_ACCOUNT_NAME = "ARG_ACCOUNT_NAME";
-
+public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.loginButton)
     Button loginButton;
     @BindView(R.id.loginUsername)
@@ -32,18 +25,15 @@ public class LoginActivity extends AccountAuthenticatorActivity {
 
     private EtudiantRepository etudiantRepository;
     private EtudiantService etudiantService;
-    private AccountManager mAccountManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+
         etudiantRepository = new EtudiantRepository();
         etudiantService = new EtudiantService(this);
 
-        mAccountManager = AccountManager.get(getBaseContext());
-
-
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
     }
 
@@ -56,7 +46,7 @@ public class LoginActivity extends AccountAuthenticatorActivity {
         if (isLoginValid) {
             Etudiant etudiant = etudiantRepository.getInfoEtudiant(username, password);
             Etudiant result = etudiantService.insertOrReplaceEtudiant(etudiant);
-//            mAccountManager.
+            Etudiant result2 = etudiantService.getEtudiant(result.getId());
         }
 
         Toast.makeText(this, (isLoginValid ? "Logged in successfully" : "Invalid credentials"),
