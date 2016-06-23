@@ -29,7 +29,7 @@ public class EtudiantDAO extends AbstractDao<Etudiant, Long> {
                 + "\"NOM\" TEXT NOT NULL ,"
                 + "\"PRENOM\" TEXT NOT NULL ,"
                 + "\"CODEPERM\" TEXT NOT NULL ,"
-                + "\"SOLDETOTAL\" TEXT NOT NULL);");
+                + "\"SOLDETOTAL\" TEXT NOT NULL );");
     }
 
     public static void dropTable(SQLiteDatabase db, boolean ifExists) {
