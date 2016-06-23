@@ -3,6 +3,7 @@
     package="geniets.android">
 
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,14 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/CustomTheme">
 
-        <activity android:name=".activities.LoginActivity">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
+        <activity android:name=".activities.LoginActivity"></activity>
 
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-        <!-- <activity android:name=".activities.LoginActivity"></activity> -->
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/SplashTheme">
@@ -29,6 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.MainActivity"></activity>
 
         <service android:name=".services.AuthenticationService">
             <intent-filter>

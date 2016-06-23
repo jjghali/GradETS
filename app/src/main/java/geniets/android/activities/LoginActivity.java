@@ -6,16 +6,12 @@ import android.accounts.AccountAuthenticatorResponse;
 import android.accounts.AccountManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.apache.commons.codec.binary.Hex;
-
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -29,25 +25,27 @@ import geniets.android.repositories.EtudiantRepository;
 import geniets.android.services.EtudiantService;
 
 public class LoginActivity extends AccountAuthenticatorActivity {
+    public AccountAuthenticatorResponse response;
     @BindView(R.id.loginButton)
     Button loginButton;
     @BindView(R.id.loginUsername)
     EditText loginUsername;
     @BindView(R.id.loginPassword)
     EditText loginPassword;
-
     private EtudiantRepository etudiantRepository;
     private EtudiantService etudiantService;
     private AccountManager accountManager;
-    public AccountAuthenticatorResponse response;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
         accountManager = AccountManager.get(getBaseContext());
+
         etudiantRepository = new EtudiantRepository();
         etudiantService = new EtudiantService(this);
 
