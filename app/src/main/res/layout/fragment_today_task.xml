@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:minWidth="25px"
-    android:minHeight="25px">
-    <ListView
+    android:minHeight="25px"
+    android:minWidth="25px">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/today_card"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:elevation="100dp"
+        card_view:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/titre_section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tasksList" />
+            android:text="Titre section" />
+    </android.support.v7.widget.CardView>
+
 </RelativeLayout>
