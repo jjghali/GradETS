@@ -16,8 +16,8 @@ public class TodayTaskFragment extends Fragment {
 
     @BindView(R.id.today_card)
     CardView todayCard;
-    @BindView(R.id.titre_section)
-    TextView titreSection;
+    @BindView(R.id.todayCardTitle)
+    TextView todayCardTitle;
 
     public TodayTaskFragment() {
         // Required empty public constructor
