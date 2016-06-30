@@ -20,7 +20,7 @@ import java.util.Hashtable;
 
 public class Cours extends AttributeContainer implements KvmSerializable
 {
-
+    public Long id;
     
     public String sigle;
     

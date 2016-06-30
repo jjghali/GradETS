@@ -12,7 +12,6 @@ public class AbstractService {
     DaoMaster daoMaster;
     DaoSession daoSession;
     DaoMaster.DevOpenHelper helper;
-    Cursor cursor;
 
     public AbstractService(Activity activity) {
         helper = new DaoMaster.DevOpenHelper(activity, "geniets-db", null);
