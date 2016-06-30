@@ -10,6 +10,7 @@
         android:layout_height="210dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        card_view:cardBackgroundColor="@color/midnightBlue"
         android:elevation="100dp"
         card_view:cardCornerRadius="0dp"
         android:layout_margin="11sp">
@@ -18,6 +19,7 @@
             android:id="@+id/todayCardTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="Today"
             android:textSize="24sp"
             android:padding="10sp" />
@@ -30,14 +32,15 @@
         card_view:cardCornerRadius="0dp"
         android:layout_marginLeft="11sp"
         android:layout_marginRight="11sp"
-        android:layout_below="@+id/today_card">
-        <!--android:layout_alignStart="@+id/today_card">-->
+        android:layout_below="@+id/today_card"
+        card_view:cardBackgroundColor="@color/midnightBlue">
 
         <TextView
             android:id="@+id/gradesCardTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Grades"
+            android:textColor="@color/white"
             android:textSize="24sp"
             android:padding="10sp" />
     </android.support.v7.widget.CardView>

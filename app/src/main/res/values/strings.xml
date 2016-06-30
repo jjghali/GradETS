@@ -7,7 +7,7 @@
     <string name="ApplicationName">EtsX</string>
     <string name="open_drawer">Open</string>
     <string name="close_drawer">Close</string>
-    <string name="navTitle_today">Today</string>
+    <string name="navTitle_home">Home</string>
     <string name="navTitle_schedule">Schedule</string>
     <string name="navTitle_grades">Grades</string>
     <string name="navTitle_profile">Profile</string>
