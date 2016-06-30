@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="178dp"
-    android:background="?attr/colorPrimary"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:weightSum="1">
     <LinearLayout
@@ -13,6 +13,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
         <TextView
+            android:id="@+id/navbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -21,6 +22,7 @@
             android:textSize="14sp"
             android:textStyle="bold" />
         <TextView
+            android:id="@+id/navbar_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"

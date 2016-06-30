@@ -11,10 +11,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import org.w3c.dom.Text;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import geniets.android.R;
+import geniets.android.data.soap.Etudiant;
 import geniets.android.fragments.TodayTaskFragment;
+import geniets.android.services.EtudiantService;
 
 public class MainActivity extends Activity {
 
@@ -24,19 +28,29 @@ public class MainActivity extends Activity {
     DrawerLayout drawerLayout;
     @BindView(R.id.nav_view)
     NavigationView navigationView;
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    @BindView(R.id.navbar_title)
+    TextView navbarTitle;
+    @BindView(R.id.navbar_subtitle)
+    TextView navbarSubtitle;
+
+    private Etudiant etudiant;
+//    @BindView(R.id.toolbar)
+//    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        toolbar_title.setText("Home");
-//        getActionBar().setDisplayHomeAsUpEnabled(true);
+        EtudiantService etudiantService = new EtudiantService(this);
+        etudiant = etudiantService.getEtudiant();
 
-//        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout);
-        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer,R.string.close_drawer);
+        toolbar_title.setText("Home");
+        navbarTitle.setText(etudiant.prenom.trim() + " " + etudiant.nom.trim());
+        navbarSubtitle.setText(etudiant.codePerm.trim());
+
+
+        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer);
 
         drawerLayout.setDrawerListener(drawerToggle);
         drawerToggle.syncState();

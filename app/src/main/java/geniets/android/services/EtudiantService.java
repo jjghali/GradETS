@@ -14,8 +14,8 @@ public class EtudiantService extends AbstractService {
         dao = (EtudiantDAO) daoSession.getEtudiantDao();
     }
 
-    public Etudiant getEtudiant(long id) {
-        return dao.load(id);
+    public Etudiant getEtudiant() {
+        return dao.queryBuilder().limit(1).list().get(0);
     }
 
     public Etudiant insertOrReplaceEtudiant(Etudiant etudiant) {

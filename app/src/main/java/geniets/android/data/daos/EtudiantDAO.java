@@ -28,7 +28,7 @@ public class EtudiantDAO extends AbstractDao<Etudiant, Long> {
                 + "\"_id\" INTEGER PRIMARY KEY , "
                 + "\"NOM\" TEXT NOT NULL ,"
                 + "\"PRENOM\" TEXT NOT NULL ,"
-                + "\"CODEPERM\" TEXT NOT NULL ,"
+                + "\"CODEPERM\" TEXT UNIQUE NOT NULL ,"
                 + "\"SOLDETOTAL\" TEXT NOT NULL );");
     }
 
@@ -44,7 +44,7 @@ public class EtudiantDAO extends AbstractDao<Etudiant, Long> {
         entity.nom = cursor.getString(offset + 1);
         entity.prenom = cursor.getString(offset + 2);
         entity.codePerm = cursor.getString(offset + 3);
-        entity.codePerm = cursor.getString(offset + 4);
+        entity.soldeTotal = cursor.getString(offset + 4);
 
         return entity;
     }

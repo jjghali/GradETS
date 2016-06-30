@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/etsRed</item>
         <item name="colorPrimaryDark">@color/etsDarkRed</item>
         <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:windowBackground">@color/midnightBlue</item>
+        <item name="android:windowBackground">@android:color/black</item>
     </style>
 
     <style name="CustomTheme" parent="CustomTheme.Base"></style>
