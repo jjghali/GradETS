@@ -1,4 +1,4 @@
-# ![alt tag](https://raw.githubusercontent.com/jjghali/geniets-android/master/app/src/main/res/drawable/ic_launcher.png?token=ALBZjRSLCwYS-vgp4N0_InADA0NiKPrsks5XgEH2wA%3D%3D) GradETS
+# GradETS https://raw.githubusercontent.com/jjghali/GradETS/master/app/src/main/res/drawable/ic_launcher.png
 
 GradETS est une application Android inspiré du projet ETSMobileAndroid2 (https://github.com/ApplETS/ETSMobile-Android2).
 Cette application requiert un appareil Android roulant sur Lollipop 5.0 au minimum.
