@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,8 +38,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        EtudiantService etudiantService = new EtudiantService(this);
-        etudiant = etudiantService.getEtudiant();
+
+        etudiant = EtudiantService.read();
 
         toolbar_title.setText("Home");
         navbarTitle.setText(etudiant.prenom.trim() + " " + etudiant.nom.trim());

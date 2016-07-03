@@ -1,25 +1,26 @@
 package geniets.android.services;
 
-import android.app.Activity;
+import com.raizlabs.android.dbflow.sql.language.Select;
 
 import geniets.android.data.daos.EtudiantDAO;
+import geniets.android.data.daos.EtudiantDAO_Table;
 import geniets.android.data.soap.Etudiant;
 
-public class EtudiantService extends AbstractService {
+public class EtudiantService {
 
-    private EtudiantDAO dao;
-
-    public EtudiantService(Activity activity) {
-        super(activity);
-        dao = (EtudiantDAO) daoSession.getEtudiantDao();
+    public static void insertOrUpdate(Etudiant etudiant) {
+        EtudiantDAO etudiantDAO = new EtudiantDAO(etudiant);
+        etudiantDAO.save();
     }
 
-    public Etudiant getEtudiant() {
-        return dao.queryBuilder().limit(1).list().get(0);
+    //TODO: get id from userpreferences
+    public static Etudiant read() {
+        return new Select().from(EtudiantDAO.class).querySingle().clone();
     }
 
-    public Etudiant insertOrReplaceEtudiant(Etudiant etudiant) {
-        long id = dao.insertOrReplace(etudiant);
-        return dao.load(id);
+    public static void delete(String codePerm) {
+        EtudiantDAO etudiantDAO = new Select().from(EtudiantDAO.class)
+                .where(EtudiantDAO_Table.codePerm.is(codePerm)).querySingle();
+        etudiantDAO.delete();
     }
 }

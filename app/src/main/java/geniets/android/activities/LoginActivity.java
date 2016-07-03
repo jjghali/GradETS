@@ -33,7 +33,7 @@ public class LoginActivity extends AccountAuthenticatorActivity {
     @BindView(R.id.loginPassword)
     EditText loginPassword;
     private EtudiantRepository etudiantRepository;
-    private EtudiantService etudiantService;
+
     private AccountManager accountManager;
 
     @Override
@@ -47,9 +47,6 @@ public class LoginActivity extends AccountAuthenticatorActivity {
         accountManager = AccountManager.get(getBaseContext());
 
         etudiantRepository = new EtudiantRepository();
-        etudiantService = new EtudiantService(this);
-
-
     }
 
     @OnClick(R.id.loginButton)
@@ -77,7 +74,7 @@ public class LoginActivity extends AccountAuthenticatorActivity {
 
             etudiant.passwordHash =  new String(cript.digest());
             createAccount(username, password);
-            Etudiant result = etudiantService.insertOrReplaceEtudiant(etudiant);
+            EtudiantService.insertOrUpdate(etudiant);
         }
 
         Toast.makeText(this, (isLoginValid ? "Logged in successfully" : "Invalid credentials"),
