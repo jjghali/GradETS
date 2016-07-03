@@ -59,6 +59,7 @@ public class LoginActivity extends AccountAuthenticatorActivity {
             Etudiant etudiant = etudiantRepository.getInfoEtudiant(username, password);
             MessageDigest cript = null;
 
+
             try {
                 cript = MessageDigest.getInstance("SHA-1");
             } catch (NoSuchAlgorithmException e) {

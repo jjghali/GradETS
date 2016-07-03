@@ -19,7 +19,7 @@ import org.ksoap2.serialization.SoapPrimitive;
 import java.util.Hashtable;
 
 public class Etudiant extends DonneesRetournees implements KvmSerializable {
-    public Long id;
+    public int id;
 
     public String nom;
 
@@ -191,13 +191,5 @@ public class Etudiant extends DonneesRetournees implements KvmSerializable {
 
     @Override
     public void setProperty(int arg0, java.lang.Object arg1) {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 }

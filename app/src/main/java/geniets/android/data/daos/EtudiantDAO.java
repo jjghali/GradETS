@@ -13,6 +13,7 @@ import geniets.android.data.soap.Etudiant;
 public class EtudiantDAO extends BaseModel {
 
     public static final String TABLE_NAME = "ETUDIANT";
+
     @Column
     @PrimaryKey(autoincrement = true)
     public int id;
@@ -46,7 +47,7 @@ public class EtudiantDAO extends BaseModel {
 
     public Etudiant clone() {
         Etudiant etudiant = new Etudiant();
-
+        etudiant.id = id;
         etudiant.nom = nom;
         etudiant.prenom = prenom;
         etudiant.codePerm = codePerm;

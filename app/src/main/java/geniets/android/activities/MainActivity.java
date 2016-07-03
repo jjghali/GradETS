@@ -12,7 +12,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import geniets.android.R;
-import geniets.android.data.soap.Etudiant;
+import geniets.android.data.daos.EtudiantDAO;
 import geniets.android.fragments.TodayTaskFragment;
 import geniets.android.services.EtudiantService;
 
@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
     @BindView(R.id.navbar_subtitle)
     TextView navbarSubtitle;
 
-    private Etudiant etudiant;
+    private EtudiantDAO etudiant;
 //    @BindView(R.id.toolbar)
 //    Toolbar toolbar;
 
