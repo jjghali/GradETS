@@ -5,8 +5,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">EtsX</string>
-    <string name="open_drawer">Open</string>
-    <string name="close_drawer">Close</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
     <string name="navTitle_home">Home</string>
     <string name="navTitle_schedule">Schedule</string>
     <string name="navTitle_grades">Grades</string>
