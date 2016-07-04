@@ -15,16 +15,16 @@ public class CoursRepository extends AbstractRepository {
 
     public List<Cours> getCoursSession(final String sSession, final String id,
                                        final String password) {
-        List<Cours> cours = getCours(id, password);
+        List<Cours> cours = listeCours(id, password);
         return Stream.of(cours).filter(c -> c.session.equals(sSession))
                 .collect(Collectors.<Cours>toList());
     }
 
-    public List<Cours> getCours(final String id, final String password) {
+    public List<Cours> listeCours(final String id, final String password) {
         List<Cours> cours = null;
 
         try {
-            cours = soap.listeCoursAsync(id,password).get().Result.liste;
+            cours = soap.listeCoursAsync(id, password).get().Result.liste;
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

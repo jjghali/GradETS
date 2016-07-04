@@ -28,4 +28,5 @@ public class CoursService {
         new Select().from(CoursDAO.class).where(CoursDAO_Table.session.is(sSession))
                 .and(CoursDAO_Table.sigle.is(sigle)).querySingle().delete();
     }
+
 }
