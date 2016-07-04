@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 
 def dbflow_version = "3.0.0-beta2"
 
@@ -23,6 +24,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -39,7 +44,7 @@ dependencies {
     compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
 
-    // sql-cipher database encryption (optional)
+    compile 'com.annimon:stream:1.1.0'
     compile "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:${dbflow_version}"
 
     compile files('libs/easywsdl/ksoap2-android-assembly-3.6.1-jar-with-dependencies.jar')

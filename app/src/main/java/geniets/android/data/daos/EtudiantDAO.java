@@ -27,7 +27,6 @@ public class EtudiantDAO extends BaseModel {
     @Unique
     public String codePerm;
     @Column
-    @Unique
     public String soldeTotal;
     @Column
     @Unique
