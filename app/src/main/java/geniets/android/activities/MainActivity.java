@@ -14,16 +14,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import geniets.android.R;
+import geniets.android.data.daos.CoursDAO;
 import geniets.android.data.daos.EtudiantDAO;
+import geniets.android.data.soap.Cours;
+import geniets.android.data.soap.Trimestre;
 import geniets.android.fragments.AboutFragment;
 import geniets.android.fragments.FullScheduleFragment;
 import geniets.android.fragments.GradesFragment;
 import geniets.android.fragments.HomeFragment;
 import geniets.android.fragments.ProfileFragment;
 import geniets.android.fragments.SettingsFragment;
+import geniets.android.repositories.ScheduleRepository;
 import geniets.android.services.EtudiantService;
 
 public class MainActivity extends AppCompatActivity {
@@ -69,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.main_fragmentContainer, homeFragment);
         fragmentTransaction.commit();
 
+        ScheduleRepository scheduleRepository = new ScheduleRepository();
+        Trimestre trimestre = new Trimestre();
+        trimestre.dateDebut = "2016-06-20";
+        trimestre.dateFin = "2016-06-23";
+        trimestre.abrege = "E2016";
     }
 
     private ActionBarDrawerToggle setupDrawerToggle() {

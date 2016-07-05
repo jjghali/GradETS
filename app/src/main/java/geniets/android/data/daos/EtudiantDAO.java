@@ -10,24 +10,29 @@ import geniets.android.data.DBHelper;
 import geniets.android.data.soap.Etudiant;
 
 @Table(database = DBHelper.class, name = EtudiantDAO.TABLE_NAME)
-public class EtudiantDAO extends BaseModel {
+public class EtudiantDAO extends BaseModel implements InterfaceDAO {
 
     public static final String TABLE_NAME = "ETUDIANT";
 
     @Column
     @PrimaryKey(autoincrement = true)
     public int id;
+
     @Column
     @Unique
     public String nom;
+
     @Column
     @Unique
     public String prenom;
+
     @Column
     @Unique
     public String codePerm;
+
     @Column
     public String soldeTotal;
+
     @Column
     @Unique
     public Boolean masculin = false;

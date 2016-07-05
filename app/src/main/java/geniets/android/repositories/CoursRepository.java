@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutionException;
 
 import geniets.android.data.soap.Cours;
 
-public class CoursRepository extends AbstractRepository {
+public class    CoursRepository extends AbstractRepository {
     public CoursRepository() {
         super();
     }
