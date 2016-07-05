@@ -12,14 +12,14 @@ import butterknife.BindView;
 import geniets.android.R;
 
 
-public class TodayTaskFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
     @BindView(R.id.today_card)
     CardView todayCard;
     @BindView(R.id.todayCardTitle)
     TextView todayCardTitle;
 
-    public TodayTaskFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 

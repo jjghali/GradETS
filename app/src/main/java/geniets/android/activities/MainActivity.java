@@ -1,10 +1,9 @@
 package geniets.android.activities;
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -15,16 +14,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
-
-import butterknife.BindInt;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import geniets.android.R;
 import geniets.android.data.daos.EtudiantDAO;
-import geniets.android.fragments.TodayTaskFragment;
+import geniets.android.fragments.AboutFragment;
+import geniets.android.fragments.FullScheduleFragment;
+import geniets.android.fragments.GradesFragment;
+import geniets.android.fragments.HomeFragment;
+import geniets.android.fragments.ProfileFragment;
+import geniets.android.fragments.SettingsFragment;
 import geniets.android.services.EtudiantService;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,11 +44,6 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle drawerToggle;
 
     private EtudiantDAO etudiant;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,33 +64,78 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setItemIconTintList(null);
 
         FragmentManager fragmentManager = getFragmentManager();
-        TodayTaskFragment todayTaskFragment = new TodayTaskFragment();
+        HomeFragment homeFragment = new HomeFragment();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.main_fragmentContainer, todayTaskFragment);
+        fragmentTransaction.add(R.id.main_fragmentContainer, homeFragment);
         fragmentTransaction.commit();
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
 
     }
 
     private ActionBarDrawerToggle setupDrawerToggle() {
         return new ActionBarDrawerToggle(this, drawerLayout, toolbar,
-                R.string.drawer_open, R.string.drawer_close);
+                R.string.drawer_open, R.string.drawer_close) {
+            /** Called when a drawer has settled in a completely closed state. */
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+            }
+
+            /** Called when a drawer has settled in a completely open state. */
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
+        };
     }
 
     private void setupDrawer() {
 
         navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        return false;
+                menuItem -> {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    Fragment fragment = null;
+                    switch (menuItem.getItemId()) {
+                        case R.id.nav_home:
+                            fragment = new HomeFragment();
+                            setTitle(R.string.navTitle_home);
+                            break;
+
+                        case R.id.nav_fullSchedule:
+                            fragment = new FullScheduleFragment();
+                            setTitle(R.string.navTitle_schedule);
+                            break;
+
+                        case R.id.nav_grades:
+                            fragment = new GradesFragment();
+                            setTitle(R.string.navTitle_grades);
+                            break;
+
+                        case R.id.nav_settings:
+                            fragment = new SettingsFragment();
+                            setTitle(R.string.navTitle_settings);
+                            break;
+
+                        case R.id.nav_profile:
+                            fragment = new ProfileFragment();
+                            setTitle(R.string.navTitle_profile);
+                            break;
+
+                        case R.id.nav_about:
+                            fragment = new AboutFragment();
+                            setTitle(R.string.navTitle_about);
+                            break;
+
+                        case R.id.nav_logoff:
+                            //TODO: make logoff strategy here
+                            break;
                     }
+
+                    fragmentTransaction.replace(R.id.main_fragmentContainer, fragment);
+                    fragmentTransaction.commit();
+                    drawerLayout.closeDrawer(navigationView);
+
+                    return false;
                 }
         );
-    }
-
-    private void selectDrawerItem(MenuItem menuItem) {
-
     }
 
     @Override
@@ -106,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration config){
+    public void onConfigurationChanged(Configuration config) {
         super.onConfigurationChanged(config);
         drawerToggle.onConfigurationChanged(config);
     }
@@ -119,6 +158,5 @@ public class MainActivity extends AppCompatActivity {
             return true;
 
         return super.onOptionsItemSelected(item);
-
     }
 }
