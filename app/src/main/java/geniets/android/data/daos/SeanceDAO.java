@@ -3,12 +3,13 @@ package geniets.android.data.daos;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
 
 import geniets.android.data.DBHelper;
 import geniets.android.data.soap.Seances;
 
 @Table(database = DBHelper.class, name = SeanceDAO.TABLE_NAME)
-public class SeanceDAO implements InterfaceDAO {
+public class SeanceDAO extends BaseModel {
 
     public static final String TABLE_NAME = "SEANCES";
 

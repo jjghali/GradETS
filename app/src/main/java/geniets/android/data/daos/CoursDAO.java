@@ -9,7 +9,7 @@ import geniets.android.data.DBHelper;
 import geniets.android.data.soap.Cours;
 
 @Table(database = DBHelper.class, name = CoursDAO.TABLE_NAME)
-public class CoursDAO extends BaseModel implements InterfaceDAO {
+public class CoursDAO extends BaseModel  {
 
     public static final String TABLE_NAME = "COURS";
 
