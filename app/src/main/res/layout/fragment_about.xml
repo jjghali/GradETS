@@ -72,9 +72,9 @@
         android:layout_height="100dp"
         android:id="@+id/imageView3"
         android:src="@drawable/etslogo"
-        android:cropToPadding="false"
         android:layout_below="@+id/about_mentionspecial"
-        android:layout_alignStart="@+id/about_mentionspecial" />
+        android:layout_alignStart="@+id/about_mentionspecial"
+        android:cropToPadding="false" />
 
     <ImageView
         android:layout_width="wrap_content"
