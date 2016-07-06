@@ -74,12 +74,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.main_fragmentContainer, homeFragment);
         fragmentTransaction.commit();
-
-        ScheduleRepository scheduleRepository = new ScheduleRepository();
-        Trimestre trimestre = new Trimestre();
-        trimestre.dateDebut = "2016-06-20";
-        trimestre.dateFin = "2016-06-23";
-        trimestre.abrege = "E2016";
     }
 
     private ActionBarDrawerToggle setupDrawerToggle() {
