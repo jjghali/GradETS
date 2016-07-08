@@ -5,7 +5,7 @@ Cette application requiert un appareil Android roulant sur Lollipop 5.0 au minim
 
 # Note concernant le projet
 
-Dû aux circonstances actuelles et aux risques de conflit d’intérêts avec le club Applets et par souci de sécurité pour la plateforme SIGNETS, j’ai décidé de rendre le projet Grades un projet personnel avec les sources fermées.
+Dû aux circonstances actuelles et aux risques de conflit d’intérêts avec le club Applets et par souci de sécurité pour la plateforme SIGNETS, j’ai décidé de mettre le projet en suspens.
 
 # License
 
