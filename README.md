@@ -1,11 +1,7 @@
 #  Grades ![alt tag](https://raw.githubusercontent.com/jjghali/Grades/master/app/src/main/res/drawable/ic_launcher.png)
 
-Grades est une application Android inspiré du projet ETSMobileAndroid2 (https://github.com/ApplETS/ETSMobile-Android2).
+Grades est un projet personnel permettant de visionner les notes et l'horaire de l'ets.
 Cette application requiert un appareil Android roulant sur Lollipop 5.0 au minimum.
-
-# Note concernant le projet
-
-Dû aux circonstances actuelles et aux risques de conflit d’intérêts avec le club Applets et par souci de sécurité pour la plateforme SIGNETS, j’ai décidé de mettre le projet en suspens.
 
 # License
 
