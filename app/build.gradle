@@ -9,7 +9,7 @@ android {
     buildToolsVersion '24.0.0'
 
     defaultConfig {
-        applicationId "geniets.android"
+        applicationId "me.jjghali.grades.android"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
