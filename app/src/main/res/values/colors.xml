@@ -2,7 +2,7 @@
 <resources>
   <color name="etsRed">#eb141c</color>
   <color name="etsDarkRed">#bc1016</color>
-  <color name="white">#00ffffff</color>
+  <color name="white">#ffffff</color>
   <color name="darkGray">#231f20</color>
   <color name="belizleHole">#2980b9</color>
   <color name="greenSea">#16a085</color>
