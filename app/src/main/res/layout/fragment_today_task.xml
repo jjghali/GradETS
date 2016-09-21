@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,38 +11,79 @@
         android:layout_height="210dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        card_view:cardBackgroundColor="@color/white"
+        android:layout_margin="10sp"
         android:elevation="100dp"
-        card_view:cardCornerRadius="0dp"
-        android:layout_margin="11sp">
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp">
 
-        <TextView
-            android:id="@+id/todayCardTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:text="Today"
-            android:textSize="24sp"
-            android:padding="10sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10sp">
+
+            <TextView
+                android:id="@+id/todayCardTitle"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="Today"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/todayStartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/todayCardTitle"
+                android:layout_below="@+id/todayCardTitle"
+                android:text="Start: 00:00"
+                android:textColor="#AAAAAA"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/todayEndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/todayCardTitle"
+                android:text="End: 00:00"
+                android:textColor="#AAAAAA"
+                android:textSize="17sp" />
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
+
     <android.support.v7.widget.CardView
-        android:id="@+id/grades_card"
+        android:id="@+id/tasks_card"
         android:layout_width="match_parent"
         android:layout_height="210dp"
-        android:elevation="100dp"
-        card_view:cardCornerRadius="0dp"
-        android:layout_marginLeft="11sp"
-        android:layout_marginRight="11sp"
         android:layout_below="@+id/today_card"
-        card_view:cardBackgroundColor="@color/white">
+        android:layout_margin="10sp"
+        android:elevation="100dp"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="0dp">
 
-        <TextView
-            android:id="@+id/gradesCardTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Grades"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            android:padding="10sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10sp">
+
+            <TextView
+                android:id="@+id/tasksCardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tasks"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                />
+
+            <Button
+                android:text="Button"
+                android:id="@+id/button2"
+                android:background="@android:color/black"
+                tools:background="@drawable/ic_done_all_white_24dp"
+                android:layout_width="35sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_height="35sp" />
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 </RelativeLayout>
