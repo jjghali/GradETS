@@ -33,8 +33,8 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_today_task, container, false);
         ButterKnife.bind(this, view);
-
-        return inflater.inflate(R.layout.fragment_today_task, container, false);
+        todayCardTitle.setText("blob");
+        return view;
     }
 
     @Override

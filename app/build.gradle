@@ -40,7 +40,8 @@ dependencies {
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
 
     compile "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:${dbflow_version}"
-
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
     compile files('libs/easywsdl/ksoap2-android-assembly-3.6.1-jar-with-dependencies.jar')
     compile files('libs/commons-codec-1.10.jar')
     compile 'com.android.support:appcompat-v7:22.2.1'
