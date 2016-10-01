@@ -1,33 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-  <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="@string/navTitle_home" />
+        <item
+            android:id="@+id/nav_fullSchedule"
+            android:icon="@drawable/schedule_icon"
+            android:title="@string/navTitle_schedule" />
+        <item
+            android:id="@+id/nav_grades"
+            android:icon="@drawable/note_icon"
+            android:title="@string/navTitle_grades" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile_icon"
+            android:title="@string/navTitle_profile" />
+    </group>
     <item
-        android:id="@+id/nav_home"
-        android:title="@string/navTitle_home"
-        android:icon="@drawable/home_icon"/>
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/settings_icon"
+        android:title="@string/navTitle_settings" />
     <item
-        android:id="@+id/nav_fullSchedule"
-        android:title="@string/navTitle_schedule"
-        android:icon="@drawable/schedule_icon"/>
-    <item
-        android:id="@+id/nav_grades"
-        android:title="@string/navTitle_grades"
-        android:icon="@drawable/note_icon"/>
-    <item
-        android:id="@+id/nav_profile"
-        android:title="@string/navTitle_profile"
-        android:icon="@drawable/profile_icon"/>
-  </group>
-  <item
-      android:id="@+id/nav_settings"
-      android:title="@string/navTitle_settings"
-      android:icon="@drawable/settings_icon"/>
-  <item
-      android:id="@+id/nav_about"
-      android:title="@string/navTitle_about"
-      android:icon="@drawable/about_icon"/>
-  <item
-      android:id="@+id/nav_logoff"
-      android:title="@string/navTitle_logoff"
-      android:icon="@drawable/logout_icon"/>
+        android:id="@+id/nav_logoff"
+        android:icon="@drawable/logout_icon"
+        android:title="@string/navTitle_logoff" />
 </menu>
