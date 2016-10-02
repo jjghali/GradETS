@@ -33,6 +33,8 @@ public class Etudiant extends DonneesRetournees implements KvmSerializable {
 
     public String passwordHash;
 
+    public String codeUniversel;
+
     public Etudiant() {
     }
 

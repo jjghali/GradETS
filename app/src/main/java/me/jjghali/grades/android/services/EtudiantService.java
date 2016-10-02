@@ -10,6 +10,7 @@ public class EtudiantService {
 
     public static void insertOrUpdate(Etudiant etudiant) {
         EtudiantDAO etudiantDAO = new EtudiantDAO(etudiant);
+
         etudiantDAO.save();
     }
 

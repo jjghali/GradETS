@@ -4,6 +4,7 @@ import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.annotation.Unique;
+import com.raizlabs.android.dbflow.sql.queriable.StringQuery;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 
 import me.jjghali.grades.android.data.DBHelper;
@@ -13,6 +14,8 @@ import me.jjghali.grades.android.data.soap.Etudiant;
 public class EtudiantDAO extends BaseModel {
 
     public static final String TABLE_NAME = "ETUDIANT";
+
+
 
     @Column
     @PrimaryKey(autoincrement = true)
@@ -31,6 +34,10 @@ public class EtudiantDAO extends BaseModel {
     public String codePerm;
 
     @Column
+    @Unique
+    public String codeUniversel;
+
+    @Column
     public String soldeTotal;
 
     @Column
@@ -46,6 +53,7 @@ public class EtudiantDAO extends BaseModel {
         codePerm = etudiant.codePerm;
         soldeTotal = etudiant.soldeTotal;
         masculin = etudiant.masculin;
+        codeUniversel = etudiant.codeUniversel;
     }
 
     public Etudiant clone() {
@@ -56,6 +64,7 @@ public class EtudiantDAO extends BaseModel {
         etudiant.codePerm = codePerm;
         etudiant.soldeTotal = soldeTotal;
         etudiant.masculin = masculin;
+        etudiant.codeUniversel = codeUniversel;
 
         return etudiant;
     }

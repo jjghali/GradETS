@@ -9,15 +9,18 @@ public class EtudiantRepository extends AbstractRepository {
         super();
     }
 
-    public Etudiant getInfoEtudiant(String id, String password) {
+    public Etudiant getInfoEtudiant(String username, String password) {
         Etudiant result = null;
+
         try {
-            result = soap.infoEtudiantAsync(id, password).get().Result;
+            result = soap.infoEtudiantAsync(username, password).get().Result;
+            result.codeUniversel = username;
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
         return result;
     }
 

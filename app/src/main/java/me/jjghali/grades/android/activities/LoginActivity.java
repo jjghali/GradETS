@@ -63,6 +63,7 @@ public class LoginActivity extends AccountAuthenticatorActivity {
 
         if (isLoginValid) {
             Etudiant etudiant = etudiantRepository.getInfoEtudiant(username, password);
+
             MessageDigest cript = null;
 
 

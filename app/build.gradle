@@ -44,6 +44,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile files('libs/easywsdl/ksoap2-android-assembly-3.6.1-jar-with-dependencies.jar')
     compile files('libs/commons-codec-1.10.jar')
+    compile files('libs/gravatar-android-1.0.jar')
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:support-v4:22.2.1'
     compile 'com.android.support:design:22.2.1'

@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.toolbar_title)
-    TextView toolbar_title;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
     @BindView(R.id.nav_view)
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         etudiant = EtudiantService.read();
 
-        toolbar_title.setText("Home");
+
         navbarTitle.setText(etudiant.prenom.trim() + " " + etudiant.nom.trim());
         navbarSubtitle.setText(etudiant.codePerm.trim());
         navigationView.setItemIconTintList(null);
@@ -66,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         HomeFragment homeFragment = new HomeFragment();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.main_fragmentContainer, homeFragment);
+        setTitle(R.string.navTitle_home);
         fragmentTransaction.commit();
     }
 

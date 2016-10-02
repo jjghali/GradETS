@@ -3,32 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent">
 
-    <ImageView
-        android:id="@+id/coverPicture"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:cropToPadding="false"
-        android:scaleType="fitStart"
-        android:src="@drawable/ets_image" />
+        android:layout_height="wrap_content">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:src="@drawable/unknown_user"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginTop="123dp"
-        android:layout_marginStart="28dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        <ImageView
+            android:id="@+id/coverPicture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:cropToPadding="false"
+            android:scaleType="fitStart"
+            android:src="@drawable/ets_image" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/profile_image"
-        android:layout_toEndOf="@+id/profile_image"
-        android:layout_marginStart="24dp"
-        android:id="@+id/textView"
-        android:textColor="@android:color/white" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/unknown_user"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp" />
+
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:text="John Doe"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal|bold"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/profile_image"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/codeUniversel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="am12345"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/studentName"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 </RelativeLayout>
