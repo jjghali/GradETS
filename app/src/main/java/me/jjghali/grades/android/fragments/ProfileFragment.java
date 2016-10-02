@@ -1,10 +1,8 @@
 package me.jjghali.grades.android.fragments;
 
-import android.accounts.Account;
-import android.accounts.AccountManager;
+
 import android.app.Fragment;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +16,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.tkeunebr.gravatar.Gravatar;
 import grades.android.R;
-import me.jjghali.grades.android.data.Constants;
 import me.jjghali.grades.android.data.daos.EtudiantDAO;
 import me.jjghali.grades.android.services.EtudiantService;
 
@@ -33,6 +30,12 @@ public class ProfileFragment extends Fragment {
     protected TextView studentName;
     @BindView(R.id.codeUniversel)
     protected TextView textViewCodeUniversel;
+
+    @BindView(R.id.textViewCodePermanent)
+    protected TextView textViewCodePermanent;
+
+    @BindView(R.id.textViewBalance)
+    protected TextView textViewBalance;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -57,6 +60,9 @@ public class ProfileFragment extends Fragment {
         etudiant = EtudiantService.read();
         studentName.setText(etudiant.prenom.trim() + " " + etudiant.nom.trim());
         String email = etudiant.codeUniversel.trim() +"@ens.etsmtl.ca";
+
+        textViewCodePermanent.setText(etudiant.codePerm.trim());
+        textViewBalance.setText(etudiant.soldeTotal.trim());
 
         gravatarUrl = gravatar.with(email).build();
         textViewCodeUniversel.setText(etudiant.codeUniversel.trim());

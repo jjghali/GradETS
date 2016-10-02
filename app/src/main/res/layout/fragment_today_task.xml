@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/today_card"
         android:layout_margin="10sp"
-        android:elevation="100dp"
+        android:elevation="1dp"
         card_view:cardBackgroundColor="@color/white"
         card_view:cardCornerRadius="0dp">
 
