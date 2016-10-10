@@ -63,9 +63,7 @@ public class LoginActivity extends AccountAuthenticatorActivity {
 
         if (isLoginValid) {
             Etudiant etudiant = etudiantRepository.getInfoEtudiant(username, password);
-
             MessageDigest cript = null;
-
 
             try {
                 cript = MessageDigest.getInstance("SHA-1");
@@ -83,6 +81,9 @@ public class LoginActivity extends AccountAuthenticatorActivity {
             etudiant.passwordHash = new String(cript.digest());
             createAccount(username, password);
             EtudiantService.insertOrUpdate(etudiant);
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
 
         Toast.makeText(this, (isLoginValid ? "Logged in successfully" : "Invalid credentials"),
